@@ -1,0 +1,240 @@
+//ir a la carpeta anterior C:\
+C:\Users\Usuario>cd..
+
+C:\Users>cd..
+
+//ir a la carpeta de xampp
+C:\>cd xampp
+
+C:\xampp>cd mysql
+
+C:\xampp\mysql\bin>
+
+// iniciar el servidor
+C:\xampp\mysql\bin>mysql -h localhost -u root -p
+
+//mostrar todas las base de datos
+MariaDB [(none)]> show databases;
+
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
++--------------------+
+
+//crear base de datos
+MariaDB [(none)]> create database vehiculos;
+
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| phpmyadmin         |
+| test               |
+| vehiculos          |
++--------------------+
+
+//abrri base de datos
+MariaDB [(none)]> use vehiculos;
+Database changed
+
+
+
+//crear tabla
+MariaDB [vehiculos]> create table vendedores(
+    -> IDvendedor int(10) not null auto_increment,
+    -> p_Apellido varchar(50) not null,
+    -> S_Apellido varchar(50) null,
+    -> P_Nombre varchar(50) not null,
+    -> S_Nombre varchar(50) null,
+    -> telefono varchar(50) not null,
+    -> f_nacimiento date not null,
+    -> primary key(IDvendedor)
+    -> );
+
+
+// abrir tabla
+MariaDB [vehiculos]> show tables;
+Empty set (0.001 sec)
+
++---------------------+
+| Tables_in_vehiculos |
++---------------------+
+| vendedores          |
++---------------------+
+
+//mirar la tabla de una forma mejor
+MariaDB [vehiculos]> describe vendedores
+
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| IDvendedor   | int(10)     | NO   | PRI | NULL    | auto_increment |
+| p_Apellido   | varchar(50) | NO   |     | NULL    |                |
+| S_Apellido   | varchar(50) | YES  |     | NULL    |                |
+| P_Nombre     | varchar(50) | NO   |     | NULL    |                |
+| S_Nombre     | varchar(50) | YES  |     | NULL    |                |
+| f_nacimiento | date        | NO   |     | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
+
+MariaDB [vehiculos]> create table vehiculos(
+    -> IDvehiculos varchar(10) not null,
+    -> Vehiculos varchar(10) not null,
+    -> Transmision varchar(70) not null,
+    -> Precio float not null,
+    -> primary key(IDvehiculos)
+    -> );
+
+MariaDB [vehiculos]> describe vehiculos;
+
++-------------+-------------+------+-----+---------+-------+
+| Field       | Type        | Null | Key | Default | Extra |
++-------------+-------------+------+-----+---------+-------+
+| IDvehiculos | varchar(10) | NO   | PRI | NULL    |       |
+| Vehiculos   | varchar(10) | NO   |     | NULL    |       |
+| Transmision | varchar(70) | NO   |     | NULL    |       |
+| Precio      | float       | NO   |     | NULL    |       |
+| modelo      | int(40)     | NO   |     | NULL    |       |
++-------------+-------------+------+-----+---------+-------+
+
+
+MariaDB [vehiculos]> create table clientes(
+    -> IDcliente varchar(10) not null,
+    -> P_Apellido varchar(50) not null,
+    -> S_Apellido varchar(50) null,
+    -> P_Nombre varchar(50) not null,
+    -> S_Nombre varchar(50) null,
+    -> Direccion varchar(50) not null,
+    -> Barrio varchar(50) not null,
+    -> Ciudad varchar(50) not null,
+    -> Zona varchar(50) not null,
+    -> Telefono varchar(30) not null,
+    -> primary key(IDcliente)
+    -> );
+
+
+MariaDB [vehiculos]> describe clientes;
+
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| IDcliente  | varchar(10) | NO   | PRI | NULL    |       |
+| P_Apellido | varchar(50) | NO   |     | NULL    |       |
+| S_Apellido | varchar(50) | YES  |     | NULL    |       |
+| P_Nombre   | varchar(50) | NO   |     | NULL    |       |
+| S_Nombre   | varchar(50) | YES  |     | NULL    |       |
+| Direccion  | varchar(50) | NO   |     | NULL    |       |
+| Barrio     | varchar(50) | NO   |     | NULL    |       |
+| Ciudad     | varchar(50) | NO   |     | NULL    |       |
+| Zona       | varchar(50) | NO   |     | NULL    |       |
+| Telefono   | varchar(30) | NO   |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+
+MariaDB [vehiculos]> create table ventas(
+    -> IDventa varchar(10) not null,
+    -> IDvendedor int(10) not null,
+    -> IDvehiculos varchar(10) not null,
+    -> IDcliente varchar(10) not null,
+    -> foreign key(IDvendedor) REFERENCES vendedores(IDvendedor),
+    -> foreign key(IDvehiculos) REFERENCES vehiculos(IDvehiculos),
+    -> foreign key(IDcliente) REFERENCES clientes(IDcliente),
+    -> primary key(IDventa)
+    -> );
+
+
+//cambiar el nombre de zona por localidad en la tabla clientes
+MariaDB [vehiculos]> alter table clientes
+    -> change Zona Localidad varchar(50) not null;
+
+
+//a la tabla vehiculo añadir el campo modelo int(40) not null
+MariaDB [vehiculos]> alter table vehiculos
+    -> add modelo int(40) not null;
+
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| IDcliente  | varchar(10) | NO   | PRI | NULL    |       |
+| P_Apellido | varchar(50) | NO   |     | NULL    |       |
+| S_Apellido | varchar(50) | YES  |     | NULL    |       |
+| P_Nombre   | varchar(50) | NO   |     | NULL    |       |
+| S_Nombre   | varchar(50) | YES  |     | NULL    |       |
+| Direccion  | varchar(50) | NO   |     | NULL    |       |
+| Barrio     | varchar(50) | NO   |     | NULL    |       |
+| Ciudad     | varchar(50) | NO   |     | NULL    |       |
+| Localidad  | varchar(50) | NO   |     | NULL    |       |
+| Telefono   | varchar(30) | NO   |     | NULL    |       |
+| Correo     | varchar(80) | NO   |     | NULL    |       |
+| Celular    | varchar(10) | NO   |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+
+// de la tabla vnededor eliminar el campo telefono
+MariaDB [vehiculos]> alter table vendedores
+    -> drop telefono;
+
+
+
+MariaDB [vehiculos]> alter table clientes
+    -> add Correo varchar(80) not null,
+    -> add Celular varchar(10) not null;
+
++------------+-------------+------+-----+---------+-------+
+| Field      | Type        | Null | Key | Default | Extra |
++------------+-------------+------+-----+---------+-------+
+| IDcliente  | varchar(10) | NO   | PRI | NULL    |       |
+| P_Apellido | varchar(50) | NO   |     | NULL    |       |
+| S_Apellido | varchar(50) | YES  |     | NULL    |       |
+| P_Nombre   | varchar(50) | NO   |     | NULL    |       |
+| S_Nombre   | varchar(50) | YES  |     | NULL    |       |
+| Direccion  | varchar(50) | NO   |     | NULL    |       |
+| Barrio     | varchar(50) | NO   |     | NULL    |       |
+| Ciudad     | varchar(50) | NO   |     | NULL    |       |
+| Localidad  | varchar(50) | NO   |     | NULL    |       |
+| Correo     | varchar(80) | NO   |     | NULL    |       |
+| Celular    | varchar(10) | NO   |     | NULL    |       |
++------------+-------------+------+-----+---------+-------+
+
+// crear la tabla tipo_vehiculo en los campos id_tipovehiculo llave primaria int(10) not null tipo_vehiculo varchar(20) not null
+MariaDB [vehiculos]> create table Tipo_vehiculos(
+    -> IDtipo_vehiculo int(10) not null,
+    -> Tipo_vehiculo varchar(20) not null,
+    -> primary key(IDtipo_vehiculo)
+    -> );
+
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| IDtipo_vehiculo | int(10)     | NO   | PRI | NULL    |       |
+| Tipo_vehiculo   | varchar(20) | NO   |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
+
+//en la tabla vehiculo crear la llave foranea idtippo vehiculo
+
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| IDvehiculos   | varchar(10) | NO   | PRI | NULL    |       |
+| Vehiculos     | varchar(10) | NO   |     | NULL    |       |
+| Transmision   | varchar(70) | NO   |     | NULL    |       |
+| Precio        | float       | NO   |     | NULL    |       |
+| modelo        | int(40)     | NO   |     | NULL    |       |
+| Tipo_vehiculo | varchar(20) | NO   | MUL | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+
+MariaDB [vehiculos]> alter table ventas
+    -> change IDvehiculos ID_carro varchar(10) not null;
+
+
+
++-----------------+-------------+------+-----+---------+-------+
+| Field           | Type        | Null | Key | Default | Extra |
++-----------------+-------------+------+-----+---------+-------+
+| IDtipo_vehiculo | int(10)     | NO   | PRI | NULL    |       |
+| Tipo_vehiculo   | varchar(20) | NO   |     | NULL    |       |
++-----------------+-------------+------+-----+---------+-------+
