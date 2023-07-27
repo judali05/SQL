@@ -65,6 +65,33 @@ alter table clientes
 change Zona Localidad varchar(50) not null;
 ~~~
 
+* gregar un atributo a una entidad
+~~~
+alter table (nombre de la entidad)
+add (nombre del atributo) (valores del atrubuto);
+
+alter table vehiculos
+add modelo int(40) not null;
+~~~
+
+* eliminar un atributo en una entodad
+~~~
+alter table (nombre de la entidad)
+drop (nombder del atributo);
+~~~
+*cerar llave 
+~~~
+primary key(nombre del atributo)
+~~~
+~~~
+foreign key(nombre del atributo) REFERENCES (nombre de la entidad)(nombre del atributo de la otra entidad);
+
+foreign key(IDvendedor) REFERENCES vendedores(IDvendedor)
+~~~
+
+
+
+
 
 
     
