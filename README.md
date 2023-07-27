@@ -29,13 +29,13 @@ create database (nombre de la base de datos);
 ~~~
 use (nombre de la tabal);
 ~~~
-* abrir las tablas registradas
+* abrir las entidades registradas
 ~~~
 show tables;
 ~~~
-* crear tablas en una base de datos
+* crear entidad en una base de datos
 ~~~
-create table (nombre de la tabla)(atributo que la persona colocapor ejemplo:)
+create table (nombre de la tabla)(atributos que la persona coloca -por ejemplo:);
 
 create table vendedores(
     -> IDvendedor int(10) not null auto_increment,
@@ -48,7 +48,24 @@ create table vendedores(
     -> primary key(IDvendedor)
     -> );
 ~~~
-*eliminar tabla
+* eliminar tabla
+~~~
+drop table (nombre de la entidad);
+~~~
+* ver el contenido de la entidad
+~~~
+describe (nombre de la entidad);
+~~~
+*cambiar nombre del cliente
+~~~
+alter table (nombre de la entidad)
+change (nombre viejo) (nombre nuevo) (valores);
+
+alter table clientes
+change Zona Localidad varchar(50) not null;
+~~~
+
+
 
     
 
