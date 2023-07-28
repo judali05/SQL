@@ -88,7 +88,10 @@ foreign key(nombre del atributo) REFERENCES (nombre de la entidad)(nombre del at
 
 foreign key(IDvendedor) REFERENCES vendedores(IDvendedor)
 ~~~
-
+* combiar nombre de la tabla
+~~~
+alter table (nombre de la tabla) rename (nombre de la nueva tabla);
+~~~
 
 
 
