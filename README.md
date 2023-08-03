@@ -92,7 +92,34 @@ foreign key(IDvendedor) REFERENCES vendedores(IDvendedor)
 ~~~
 alter table (nombre de la tabla) rename (nombre de la nueva tabla);
 ~~~
-
+* ingresar valores listando campos
+~~~
+INSERT INTO vehiculos([campo],[campo],[campo],[campo]) 
+VALUES ('[valor de texto]','[valor]','[valor]',[valor numerico]);
+~~~
+* ver datos colocados de la tabla
+~~~
+SELECT * FROM (nombre de la tabla);
+~~~
+* ingresar nuevos valores sin listar campos
+~~~
+INSERT INTO (nombre de la tabla) 
+VALUES ('[valor de texto]','[valor]','[valor]',[valor numerico]) ;
+~~~
+* ingresar varios registros
+~~~
+INSERT INTO (nombre de la tabla) 
+VALUES ('[valor de texto]','[valor]','[valor]',[valor numerico]),('[valor de texto]','[valor]','[valor]',[valor numerico]);
+~~~
+*cambiar valores en el registro
+~~~
+UPDATE (nombre de la table)
+SET  (campo)=(valor nuevo),
+(campo)=(valor nuevo),
+(campo)=(valor nuevo),
+(campo)=(valor nuevo)
+WHERE (campo)=(numero de registro);
+~~~
 
 
 
