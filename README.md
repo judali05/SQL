@@ -21,7 +21,7 @@ mysql -h localhost -u root -p
 ~~~
 show databases;
 ~~~
-*cear base de datos 
+* cear base de datos 
 ~~~
 create database (nombre de la base de datos);
 ~~~
@@ -56,7 +56,7 @@ drop table (nombre de la entidad);
 ~~~
 describe (nombre de la entidad);
 ~~~
-*cambiar nombre del cliente
+* cambiar nombre del cliente
 ~~~
 alter table (nombre de la entidad)
 change (nombre viejo) (nombre nuevo) (valores);
@@ -79,7 +79,7 @@ add modelo int(40) not null;
 alter table (nombre de la entidad)
 drop (nombder del atributo);
 ~~~
-*cerar llave 
+* cerar llave 
 ~~~
 primary key(nombre del atributo)
 ~~~
@@ -111,7 +111,7 @@ VALUES ('[valor de texto]','[valor]','[valor]',[valor numerico]) ;
 INSERT INTO (nombre de la tabla) 
 VALUES ('[valor de texto]','[valor]','[valor]',[valor numerico]),('[valor de texto]','[valor]','[valor]',[valor numerico]);
 ~~~
-*cambiar valores en el registro
+* cambiar valores en el registro
 ~~~
 UPDATE (nombre de la table)
 SET  (campo)=(valor nuevo),
@@ -120,7 +120,10 @@ SET  (campo)=(valor nuevo),
 (campo)=(valor nuevo)
 WHERE (campo)=(numero de registro);
 ~~~
-
+* having para buscar un objeto
+~~~
+SELECT (nombre del campo), count(los registros que quiera) as (nombreq que quiera el campo) from (nombre de la tabla) GROUP BY (nombre del campo) HAVING COUNT(nombre del campo) (cantidad);
+~~~
 
 
 
