@@ -7,6 +7,11 @@
 ### :white_check_mark: Este repositorio es un breve repaso para ir adquiriendo nuevo conocimiento de SQL (Structured Query Language) lenguaje de consulta estructurado en español. Este lenguaje de consulta estructurada consiste en un conjunto de instrucciones que se utilizan para interactuar con bases de datos relacionales, permitiendo la manipulación, consulta y gestión de los datos almacenados.
 
 <br>
+<details>
+  <summary>
+    Temario de SQL
+  </summary>
+
 
 ## Nivel Básico (80% del resultado)
 
@@ -43,3 +48,36 @@
 ### Funciones y Procedimientos Almacenados:
 - Creación y utilización de funciones y procedimientos almacenados para modularizar y reutilizar código SQL.
 - Ejecución de funciones y procedimientos almacenados.
+
+</details>
+
+<details>
+  <summary>
+    Plan de Estudio de SQL
+  </summary>
+
+## Semana 1-2: Nivel Básico
+
+### Día 1-10:
+- **2 horas diarias:** Conceptos Fundamentales de SQL y Consulta de Datos.
+
+## Semana 3: Nivel Básico (Continuación) y Revisión
+
+### Día 11-15:
+- **2 horas diarias:** Manipulación de Datos y Joins.
+### Día 16-17:
+- **4 horas para revisión:** Repasar los conceptos básicos y resolver ejercicios de práctica.
+
+## Semana 4: Nivel Intermedio
+
+### Día 18-25:
+- **2 horas diarias:** Subconsultas, Índices y Optimización.
+
+## Semana 5: Nivel Intermedio (Continuación), Pruebas y Revisión Final
+
+### Día 26-30:
+- **2 horas diarias:** Transacciones y Control de la Concurrencia, Funciones y Procedimientos Almacenados.
+### Día 31-32:
+- **4 horas para pruebas y revisión final:** Realizar pruebas de conocimiento sobre los temas cubiertos y repasar cualquier área que necesite más atención.
+
+</details>
