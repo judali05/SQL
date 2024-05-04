@@ -49,9 +49,9 @@
 - Creación y utilización de funciones y procedimientos almacenados para modularizar y reutilizar código SQL.
 - Ejecución de funciones y procedimientos almacenados.
 
-</details>
-
 ***
+
+</details>
 
 <details>
   <summary>
@@ -81,5 +81,7 @@
 - **2 horas diarias:** Transacciones y Control de la Concurrencia, Funciones y Procedimientos Almacenados.
 ### Día 31-32:
 - **4 horas para pruebas y revisión final:** Realizar pruebas de conocimiento sobre los temas cubiertos y repasar cualquier área que necesite más atención.
+
+***
 
 </details>
