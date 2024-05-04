@@ -2,7 +2,7 @@
   <h1> :beginner: CURSO DE SQL :beginner: </h1>
 </div>
 
-<img src="https://github.com/judali05/HTML-5/blob/main/html_logo.png" width="120" height="120" style="margin: 2px;"  align="left">
+<img src="https://github.com/judali05/SQL/blob/main/SQL.png" width="120" height="120" style="margin: 2px;"  align="left">
 
 ### :white_check_mark: Este repositorio es un breve repaso para ir adquiriendo nuevo conocimiento de SQL (Structured Query Language) en español. Este lenguaje de consulta estructurada consiste en un conjunto de instrucciones que se utilizan para interactuar con bases de datos relacionales, permitiendo la manipulación, consulta y gestión de los datos almacenados.
 
