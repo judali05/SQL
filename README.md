@@ -51,6 +51,8 @@
 
 </details>
 
+***
+
 <details>
   <summary>
     Plan de Estudio de SQL
