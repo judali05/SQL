@@ -4,7 +4,7 @@
 
 <img src="https://github.com/judali05/SQL/blob/main/SQL.png" width="135" height="135" style="margin: 2px;"  align="left">
 
-### :white_check_mark: Este repositorio es un breve repaso para ir adquiriendo nuevo conocimiento de SQL (Structured Query Language) en español. Este lenguaje de consulta estructurada consiste en un conjunto de instrucciones que se utilizan para interactuar con bases de datos relacionales, permitiendo la manipulación, consulta y gestión de los datos almacenados.
+### :white_check_mark: Este repositorio es un breve repaso para ir adquiriendo nuevo conocimiento de SQL (Structured Query Language) lenguaje de consulta estructurado en español. Este lenguaje de consulta estructurada consiste en un conjunto de instrucciones que se utilizan para interactuar con bases de datos relacionales, permitiendo la manipulación, consulta y gestión de los datos almacenados.
 
 <br>
 
